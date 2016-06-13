@@ -1,0 +1,26 @@
+[
+  {
+    "request": {
+      "body": "{\"type\":\"stream\",\"script\":\"stream\\n    |from()\\n        .measurement('cpu')\\n\",\"dbrps\":[{\"rp\":\"default\",\"db\":\"kapacitor_example\"}]}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks"
+    },
+    "response": {
+      "body": "Internal Server Error",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "b5a5566f-2f5e-11e6-8002-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Fri, 10 Jun 2016 22:57:30 GMT",
+        "Content-Length": "755"
+      },
+      "status_code": 500,
+      "type": "error"
+    }
+  }
+]

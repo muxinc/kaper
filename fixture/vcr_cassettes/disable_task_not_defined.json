@@ -1,0 +1,26 @@
+[
+  {
+    "request": {
+      "body": "{\"status\":\"disabled\"}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "patch",
+      "options": [],
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks/abc-123"
+    },
+    "response": {
+      "body": "{\n    \"error\": \"task does not exist, cannot update\"\n}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "cd32237b-3174-11e6-800f-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Mon, 13 Jun 2016 14:40:40 GMT",
+        "Content-Length": "53"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

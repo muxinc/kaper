@@ -1,0 +1,24 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks"
+    },
+    "response": {
+      "body": "{\n    \"tasks\": [\n        {\n            \"created\": \"2016-06-10T15:54:56.560691269-07:00\",\n            \"dbrps\": [\n                {\n                    \"db\": \"kapacitor_example\",\n                    \"rp\": \"default\"\n                }\n            ],\n            \"dot\": \"digraph 5909b578-d8ee-448f-99b0-c4767e37f96f {\\nstream0 -\\u003e from1;\\n}\",\n            \"error\": \"\",\n            \"executing\": false,\n            \"id\": \"5909b578-d8ee-448f-99b0-c4767e37f96f\",\n            \"last-enabled\": \"0001-01-01T00:00:00Z\",\n            \"link\": {\n                \"rel\": \"self\",\n                \"href\": \"/kapacitor/v1/tasks/5909b578-d8ee-448f-99b0-c4767e37f96f\"\n            },\n            \"modified\": \"2016-06-10T15:54:56.560691269-07:00\",\n            \"script\": \"stream\\n    |from()\\n        .measurement('cpu')\\n\",\n            \"stats\": null,\n            \"status\": \"disabled\",\n            \"type\": \"stream\"\n        },\n        {\n            \"created\": \"2016-06-10T15:57:30.232472802-07:00\",\n            \"dbrps\": [\n                {\n                    \"db\": \"kapacitor_example\",\n                    \"rp\": \"default\"\n                }\n            ],\n            \"dot\": \"digraph f5d7b98c-b56f-4e5f-8c8b-75cd745ce871 {\\nstream0 -\\u003e from1;\\n}\",\n            \"error\": \"\",\n            \"executing\": false,\n            \"id\": \"f5d7b98c-b56f-4e5f-8c8b-75cd745ce871\",\n            \"last-enabled\": \"0001-01-01T00:00:00Z\",\n            \"link\": {\n                \"rel\": \"self\",\n                \"href\": \"/kapacitor/v1/tasks/f5d7b98c-b56f-4e5f-8c8b-75cd745ce871\"\n            },\n            \"modified\": \"2016-06-10T15:57:30.232472802-07:00\",\n            \"script\": \"stream\\n    |from()\\n        .measurement('cpu')\\n\",\n            \"stats\": null,\n            \"status\": \"disabled\",\n            \"type\": \"stream\"\n        }\n    ]\n}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "d1e8e2cb-2f80-11e6-8003-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Sat, 11 Jun 2016 03:01:40 GMT",
+        "Content-Length": "1789"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
