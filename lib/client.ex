@@ -108,17 +108,15 @@ defmodule Kaper.Client do
     request :get, req_url, [], "", ""
   end
 
-  def remove_empty_values(map) do
+  defp remove_empty_values(map) do
     map
       |> Enum.filter(fn {_, v} -> v != nil && v != "" end)
       |> Enum.into(%{})
   end
 
-  def url(path, domain), do: Path.join([domain, path])
+  defp url(path, domain), do: Path.join([domain, path])
 
-  def request(method, url, headers, ctype, body) do
-    url  = String.to_char_list(url)
-
+  defp request(method, url, headers, ctype, body) do
     case method do
       :get ->
         HTTPoison.get(url)
@@ -139,7 +137,7 @@ defmodule Kaper.Client do
       {:ok, %HTTPoison.Response{body: body, status_code: 200}} ->
         {:ok, Poison.decode!(body) |> Enum.map(fn({k, v}) -> {String.to_atom(k), v} end) }
       {:ok, %HTTPoison.Response{status_code: 204}} ->
-        {:ok}
+        {:ok, %{}}
       {:ok, %HTTPoison.Response{body: body}} ->
         {:error, body }
       {:error, %HTTPoison.Error{reason: reason}} ->
@@ -147,7 +145,7 @@ defmodule Kaper.Client do
     end
    end
 
-  def add_query(url, ""),          do: url
-  def add_query(url, query),       do: url <> "?" <> query
+  defp add_query(url, ""),          do: url
+  defp add_query(url, query),       do: url <> "?" <> query
 
 end
