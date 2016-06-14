@@ -1,6 +1,6 @@
 # Kaper
 
-[![Build Status](https://travis-ci.org/muxinc/kaper.svg?branch=master)](https://travis-ci.org/muxinc/kaper) [![Coverage Status](https://coveralls.io/repos/github/muxinc/kaper/badge.svg?branch=master)](https://coveralls.io/github/muxinc/kaper?branch=master) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/muxinc/kaper.svg?branch=master)](https://travis-ci.org/muxinc/kaper) [![Coverage Status](https://coveralls.io/repos/github/muxinc/kaper/badge.svg?branch=master)](https://coveralls.io/github/muxinc/kaper?branch=master) [![License](https://img.shields.io/badge/license-Apache_2.0-brightgreen.svg)](https://opensource.org/licenses/apache-2.0)
 
 Elixir client for the [Kapacitor](https://influxdata.com/time-series-platform/kapacitor/) REST API.
 
