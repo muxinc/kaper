@@ -1,0 +1,25 @@
+[
+  {
+    "request": {
+      "body": "{\"status\":\"disabled\"}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "patch",
+      "options": [],
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks/5909b578-d8ee-448f-99b0-c4767e37f96f"
+    },
+    "response": {
+      "body": "",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "2adc8201-3172-11e6-800a-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Mon, 13 Jun 2016 14:21:49 GMT"
+      },
+      "status_code": 204,
+      "type": "ok"
+    }
+  }
+]

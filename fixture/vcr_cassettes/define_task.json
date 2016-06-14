@@ -1,0 +1,26 @@
+[
+  {
+    "request": {
+      "body": "{\"type\":\"stream\",\"script\":\"stream\\n    |from()\\n        .measurement('cpu')\\n\",\"dbrps\":[{\"rp\":\"default\",\"db\":\"kapacitor_example\"}]}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks"
+    },
+    "response": {
+      "body": "{\n    \"link\": {\n        \"rel\": \"self\",\n        \"href\": \"/kapacitor/v1/tasks/f5d7b98c-b56f-4e5f-8c8b-75cd745ce871\"\n    },\n    \"id\": \"f5d7b98c-b56f-4e5f-8c8b-75cd745ce871\",\n    \"type\": \"stream\",\n    \"dbrps\": [\n        {\n            \"db\": \"kapacitor_example\",\n            \"rp\": \"default\"\n        }\n    ],\n    \"script\": \"stream\\n    |from()\\n        .measurement('cpu')\\n\",\n    \"dot\": \"digraph f5d7b98c-b56f-4e5f-8c8b-75cd745ce871 {\\nstream0 -\\u003e from1;\\n}\",\n    \"status\": \"disabled\",\n    \"executing\": false,\n    \"error\": \"\",\n    \"stats\": {\n        \"task-stats\": null,\n        \"node-stats\": null\n    },\n    \"created\": \"2016-06-10T15:57:30.232472802-07:00\",\n    \"modified\": \"2016-06-10T15:57:30.232472802-07:00\",\n    \"last-enabled\": \"0001-01-01T00:00:00Z\"\n}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "b5a5566f-2f5e-11e6-8002-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Fri, 10 Jun 2016 22:57:30 GMT",
+        "Content-Length": "755"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

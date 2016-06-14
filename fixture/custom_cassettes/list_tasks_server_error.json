@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": {
+        "httpc_options": {
+          "body_format": "binary"
+        },
+        "http_options": []
+      },
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks"
+    },
+    "response": {
+      "body": "Internal Server Error",
+      "headers": {
+        "date": "Fri, 10 Jun 2016 21:13:48 GMT",
+        "content-length": "19",
+        "content-type": "application/json; charset=utf-8",
+        "request-id": "391c0389-2f50-11e6-8001-000000000000",
+        "x-kapacitor-version": "0.13.1"
+      },
+      "status_code": 500,
+      "type": "error"
+    }
+  }
+]
