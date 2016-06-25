@@ -11,9 +11,10 @@ defmodule Kaper.Mixfile do
      deps: deps,
      package: [
        contributors: ["Scott Kidder"],
+       maintainers: ["Scott Kidder"],
        licenses: ["MIT"],
        links: %{github: "https://github.com/muxinc/kaper"},
-       files: ["lib/*", "mix.exs", "README.md", "LICENSE.md"]
+       files: ["lib/*", "mix.exs", "README.md", "LICENSE"],
      ],
      description: """
      Elixir Kapacitor Client
