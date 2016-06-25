@@ -3,7 +3,7 @@ defmodule Kaper.Mixfile do
 
   def project do
     [app: :kaper,
-     version: "0.0.1",
+     version: "0.0.2",
      elixir: "~> 1.2",
      test_coverage: [tool: ExCoveralls],
      build_embedded: Mix.env == :prod,
