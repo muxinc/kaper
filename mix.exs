@@ -42,8 +42,8 @@ defmodule Kaper.Mixfile do
      {:meck, "~> 0.8.4", only: [:test]},
      {:excoveralls, "~> 0.4", only: [:dev, :test]},
      {:poison, "~> 2.1"},
-     {:httpoison, "~> 0.8.3"},
-     {:hackney, "~> 1.6.0"},
+     {:httpoison, "~> 0.8.1"},
+     {:hackney, "~> 1.4.10"},
      {:dogma, "~> 0.1.6", only: [:dev]}
     ]
   end
