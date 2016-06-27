@@ -11,7 +11,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   1. Add kaper to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:kaper, "~> 0.0.1"}]
+          [{:kaper, "~> 0.0.3"}]
         end
 
   2. Ensure kaper is started before your application:
