@@ -22,8 +22,21 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 
 ## Configuration
-| Key  | Example  |  Description |
-|---|---|---|
-| url  | http://0.0.0.0:9092  |  URL of Kapacitor endpoint |
-| basic_auth_username  | kapacitor_user  |  Basic HTTP authentication username |
-| basic_auth_password  | password  |  Basic HTTP authentication password |
+| Key  | Required? | Example  |  Description |
+|---|---|---|---|
+| url  | Yes | http://0.0.0.0:9092  |  URL of Kapacitor endpoint |
+| basic_auth_username  | No | kapacitor_user  |  Basic HTTP authentication username |
+| basic_auth_password  | No | password  |  Basic HTTP authentication password |
+
+
+## Example
+
+```elixir
+  defmodule KapClient do
+    use Kaper.Client, url: "http://0.0.0.0:9092"
+  end
+
+  defmodule BasicAuthKapClient do
+    use Kaper.Client, url: "http://0.0.0.0:9092", basic_auth_username: "admin", basic_auth_password: "password"
+  end
+```
