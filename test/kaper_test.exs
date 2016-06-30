@@ -7,6 +7,10 @@ defmodule KaperTest do
     use Kaper.Client, url: "http://0.0.0.0:9092"
   end
 
+  defmodule BasicAuthKapClient do
+    use Kaper.Client, url: "http://0.0.0.0:9092", basic_auth_username: "admin", basic_auth_password: "password"
+  end
+
   setup_all do
     HTTPoison.start
     :ok
@@ -14,6 +18,14 @@ defmodule KaperTest do
 
   test "clients can use Client for configuration automation" do
     assert KapClient.__info__(:functions) |> Enum.member?({:list_tasks, 0})
+  end
+
+  test "list_tasks with basic-auth client returns {:ok, response} if successful" do
+    use_cassette "basic_auth_list_tasks" do
+      {:ok, response} = BasicAuthKapClient.list_tasks
+
+      assert length(response[:tasks]) == 2
+    end
   end
 
   test "list_tasks returns {:ok, response} if successful" do
@@ -41,6 +53,14 @@ defmodule KaperTest do
   test "define_task returns {:ok, response} if successful" do
     use_cassette "define_task" do
       {:ok, response} = KapClient.define_task "stream", [%{db: "kapacitor_example", rp: "default"}], "stream\n    |from()\n        .measurement('cpu')\n"
+
+      assert response[:id] != ""
+    end
+  end
+
+  test "define_task with basic auth returns {:ok, response} if successful" do
+    use_cassette "basic_auth_define_task" do
+      {:ok, response} = BasicAuthKapClient.define_task "stream", [%{db: "kapacitor_example", rp: "default"}], "stream\n    |from()\n        .measurement('cpu')\n"
 
       assert response[:id] != ""
     end

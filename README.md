@@ -11,7 +11,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   1. Add kaper to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:kaper, "~> 0.0.3"}]
+          [{:kaper, "~> 0.0.4"}]
         end
 
   2. Ensure kaper is started before your application:
@@ -20,3 +20,10 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
           [applications: [:kaper]]
         end
 
+
+## Configuration
+| Key  | Example  |  Description |
+|---|---|---|
+| url  | http://0.0.0.0:9092  |  URL of Kapacitor endpoint |
+| basic_auth_username  | kapacitor_user  |  Basic HTTP authentication username |
+| basic_auth_password  | password  |  Basic HTTP authentication password |

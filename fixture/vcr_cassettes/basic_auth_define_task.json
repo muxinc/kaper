@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "{\"vars\":{},\"type\":\"stream\",\"template_id\":\"\",\"status\":\"enabled\",\"script\":\"stream\\n    |from()\\n        .measurement('cpu')\\n\",\"id\":\"\",\"dbrps\":[{\"rp\":\"default\",\"db\":\"kapacitor_example\"}]}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": {
+        "basic_auth": [
+          "admin",
+          "password"
+        ]
+      },
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks"
+    },
+    "response": {
+      "body": "{\n    \"link\": {\n        \"rel\": \"self\",\n        \"href\": \"/kapacitor/v1/tasks/3e02da4a-4732-4949-8d9f-353e01a06be5\"\n    },\n    \"id\": \"3e02da4a-4732-4949-8d9f-353e01a06be5\",\n    \"type\": \"stream\",\n    \"dbrps\": [\n        {\n            \"db\": \"kapacitor_example\",\n            \"rp\": \"default\"\n        }\n    ],\n    \"script\": \"stream\\n    |from()\\n        .measurement('cpu')\\n\",\n    \"dot\": \"digraph 3e02da4a-4732-4949-8d9f-353e01a06be5 {\\ngraph [throughput=\\\"0.00 points/s\\\"];\\n\\nstream0 [avg_exec_time_ns=\\\"0\\\" ];\\nstream0 -\\u003e from1 [processed=\\\"0\\\"];\\n\\nfrom1 [avg_exec_time_ns=\\\"0\\\" ];\\n}\",\n    \"status\": \"enabled\",\n    \"executing\": true,\n    \"error\": \"\",\n    \"stats\": {\n        \"task-stats\": {\n            \"throughput\": 0\n        },\n        \"node-stats\": {\n            \"from1\": {\n                \"avg_exec_time_ns\": 0,\n                \"collected\": 0,\n                \"emitted\": 0\n            },\n            \"stream0\": {\n                \"avg_exec_time_ns\": 0,\n                \"collected\": 0,\n                \"emitted\": 0\n            }\n        }\n    },\n    \"created\": \"2016-06-30T16:13:02.595489392-07:00\",\n    \"modified\": \"2016-06-30T16:13:02.595489392-07:00\",\n    \"last-enabled\": \"2016-06-30T16:13:02.595489392-07:00\"\n}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "31a3a184-3f18-11e6-800a-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Thu, 30 Jun 2016 23:13:02 GMT",
+        "Content-Length": "1218"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
