@@ -43,7 +43,7 @@ defmodule Kaper.Client do
     })
     query = URI.encode_query(attrs)
     req_url = add_query(url("/kapacitor/v1/tasks", conf[:url]), query)
-    request :get, req_url, [], "", ""
+    request conf, :get, req_url, [], "", ""
   end
 
   def define_task(conf, type, dbrps, script, status \\ :enabled, vars \\ %{}, id \\ nil, template_id \\ nil) do
@@ -63,7 +63,7 @@ defmodule Kaper.Client do
     req_url = url("/kapacitor/v1/tasks", conf[:url])
 
     body = Poison.encode!(attrs)
-    request :post, req_url, [], "application/json", body
+    request conf, :post, req_url, [], "application/json", body
   end
 
   def enable_task(conf, id) do
@@ -81,7 +81,7 @@ defmodule Kaper.Client do
     req_url = url(Path.join("/kapacitor/v1/tasks/", id), conf[:url])
 
     body = Poison.encode!(attrs)
-    request :patch, req_url, [], "application/json", body
+    request conf, :patch, req_url, [], "application/json", body
   end
 
   def delete_task(conf, id) do
@@ -91,7 +91,7 @@ defmodule Kaper.Client do
   defp do_delete_task(conf, id) do
     req_url = url(Path.join("/kapacitor/v1/tasks/", id), conf[:url])
 
-    request :delete, req_url, [], "", ""
+    request conf, :delete, req_url, [], "", ""
   end
 
   def get_task(conf, id, dot_view \\ "attributes", script_format \\ "formatted") do
@@ -105,7 +105,7 @@ defmodule Kaper.Client do
     })
     query = URI.encode_query(attrs)
     req_url = add_query(url(Path.join("/kapacitor/v1/tasks/", id), conf[:url]), query)
-    request :get, req_url, [], "", ""
+    request conf, :get, req_url, [], "", ""
   end
 
   defp remove_empty_values(map) do
@@ -116,17 +116,25 @@ defmodule Kaper.Client do
 
   defp url(path, domain), do: Path.join([domain, path])
 
-  defp request(method, url, headers, ctype, body) do
+  defp request(conf, method, url, headers, ctype, body) do
+    options = case conf[:basic_auth_username] != "" && conf[:basic_auth_password] != "" do
+      true ->
+        [{:hackney, [basic_auth: {conf[:basic_auth_username], conf[:basic_auth_password]}]}]
+      _ ->
+        []
+    end
+
     case method do
       :get ->
-        HTTPoison.get(url)
+        HTTPoison.get(url, [], options)
       _    ->
         headers = headers ++ [{'Content-Type', ctype}]
         HTTPoison.request(
           method,
           url,
           body,
-          headers
+          headers,
+          options
         )
     end
     |> normalize_response

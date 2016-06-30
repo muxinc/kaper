@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": {
+        "basic_auth": [
+          "admin",
+          "password"
+        ]
+      },
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks"
+    },
+    "response": {
+      "body": "{\n    \"tasks\": [\n        {\n            \"created\": \"2016-06-10T15:54:56.560691269-07:00\",\n            \"dbrps\": [\n                {\n                    \"db\": \"kapacitor_example\",\n                    \"rp\": \"default\"\n                }\n            ],\n            \"dot\": \"digraph 5909b578-d8ee-448f-99b0-c4767e37f96f {\\ngraph [throughput=\\\"0.00 points/s\\\"];\\n\\nstream0 [avg_exec_time_ns=\\\"0\\\" ];\\nstream0 -\\u003e from1 [processed=\\\"0\\\"];\\n\\nfrom1 [avg_exec_time_ns=\\\"0\\\" ];\\n}\",\n            \"error\": \"\",\n            \"executing\": true,\n            \"id\": \"5909b578-d8ee-448f-99b0-c4767e37f96f\",\n            \"last-enabled\": \"2016-06-13T07:21:49.733879841-07:00\",\n            \"link\": {\n                \"rel\": \"self\",\n                \"href\": \"/kapacitor/v1/tasks/5909b578-d8ee-448f-99b0-c4767e37f96f\"\n            },\n            \"modified\": \"2016-06-13T07:21:49.733879841-07:00\",\n            \"script\": \"stream\\n    |from()\\n        .measurement('cpu')\\n\",\n            \"stats\": {\n                \"task-stats\": {\n                    \"throughput\": 0\n                },\n                \"node-stats\": {\n                    \"from1\": {\n                        \"avg_exec_time_ns\": 0,\n                        \"collected\": 0,\n                        \"emitted\": 0\n                    },\n                    \"stream0\": {\n                        \"avg_exec_time_ns\": 0,\n                        \"collected\": 0,\n                        \"emitted\": 0\n                    }\n                }\n            },\n            \"status\": \"enabled\",\n            \"type\": \"stream\"\n        },\n        {\n            \"created\": \"2016-06-13T07:08:42.954873537-07:00\",\n            \"dbrps\": [\n                {\n                    \"db\": \"kapacitor_example\",\n                    \"rp\": \"default\"\n                }\n            ],\n            \"dot\": \"digraph b6e7a407-ac26-4397-aeab-911b687ba46a {\\ngraph [throughput=\\\"0.00 points/s\\\"];\\n\\nstream0 [avg_exec_time_ns=\\\"0\\\" ];\\nstream0 -\\u003e from1 [processed=\\\"0\\\"];\\n\\nfrom1 [avg_exec_time_ns=\\\"0\\\" ];\\n}\",\n            \"error\": \"\",\n            \"executing\": true,\n            \"id\": \"b6e7a407-ac26-4397-aeab-911b687ba46a\",\n            \"last-enabled\": \"2016-06-13T07:08:42.954873537-07:00\",\n            \"link\": {\n                \"rel\": \"self\",\n                \"href\": \"/kapacitor/v1/tasks/b6e7a407-ac26-4397-aeab-911b687ba46a\"\n            },\n            \"modified\": \"2016-06-13T07:08:42.954873537-07:00\",\n            \"script\": \"stream\\n    |from()\\n        .measurement('cpu')\\n\",\n            \"stats\": {\n                \"task-stats\": {\n                    \"throughput\": 0\n                },\n                \"node-stats\": {\n                    \"from1\": {\n                        \"avg_exec_time_ns\": 0,\n                        \"collected\": 0,\n                        \"emitted\": 0\n                    },\n                    \"stream0\": {\n                        \"avg_exec_time_ns\": 0,\n                        \"collected\": 0,\n                        \"emitted\": 0\n                    }\n                }\n            },\n            \"status\": \"enabled\",\n            \"type\": \"stream\"\n        }\n    ]\n}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "0f572e74-3f18-11e6-8009-000000000000",
+        "X-Kapacitor-Version": "0.13.1",
+        "Date": "Thu, 30 Jun 2016 23:12:05 GMT",
+        "Transfer-Encoding": "chunked"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
