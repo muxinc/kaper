@@ -22,9 +22,6 @@ defmodule Kaper.Client do
       def disable_task(id) do
         unquote(__MODULE__).disable_task(conf(), id)
       end
-      def define_template(type, script, id \\ "") do
-        unquote(__MODULE__).define_template(conf(), type, script, id)
-      end
     end
   end
 
