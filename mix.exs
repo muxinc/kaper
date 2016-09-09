@@ -43,7 +43,8 @@ defmodule Kaper.Mixfile do
      {:excoveralls, "~> 0.4", only: [:dev, :test]},
      {:poison, "~> 2.1"},
      {:httpoison, "~> 0.9.0"},
-     {:dogma, "~> 0.1.6", only: [:dev]}
+     {:dogma, "~> 0.1.6", only: [:dev]},
+     {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 end
