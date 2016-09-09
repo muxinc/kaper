@@ -1,0 +1,26 @@
+[
+  {
+    "request": {
+      "body": "{\"script\":\"stream\\n    |from()\\n        .measurement('disk')\\n\"}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "patch",
+      "options": [],
+      "request_body": "",
+      "url": "http://0.0.0.0:9092/kapacitor/v1/tasks/ebbffcb1-6d72-42d1-b8b5-148ce0257ccd"
+    },
+    "response": {
+      "body": "{\n    \"link\": {\n        \"rel\": \"self\",\n        \"href\": \"/kapacitor/v1/tasks/ebbffcb1-6d72-42d1-b8b5-148ce0257ccd\"\n    },\n    \"id\": \"ebbffcb1-6d72-42d1-b8b5-148ce0257ccd\",\n    \"template-id\": \"\",\n    \"type\": \"stream\",\n    \"dbrps\": [\n        {\n            \"db\": \"kapacitor_example\",\n            \"rp\": \"default\"\n        }\n    ],\n    \"script\": \"stream\\n    |from()\\n        .measurement('disk')\\n\",\n    \"vars\": {},\n    \"dot\": \"digraph ebbffcb1-6d72-42d1-b8b5-148ce0257ccd {\\ngraph [throughput=\\\"0.00 points/s\\\"];\\n\\nstream0 [avg_exec_time_ns=\\\"0s\\\" ];\\nstream0 -\\u003e from1 [processed=\\\"0\\\"];\\n\\nfrom1 [avg_exec_time_ns=\\\"0s\\\" ];\\n}\",\n    \"status\": \"enabled\",\n    \"executing\": true,\n    \"error\": \"\",\n    \"stats\": {\n        \"task-stats\": {\n            \"throughput\": 0\n        },\n        \"node-stats\": {\n            \"from1\": {\n                \"avg_exec_time_ns\": 0,\n                \"collected\": 0,\n                \"emitted\": 0\n            },\n            \"stream0\": {\n                \"avg_exec_time_ns\": 0,\n                \"collected\": 0,\n                \"emitted\": 0\n            }\n        }\n    },\n    \"created\": \"2016-09-09T20:13:22.577932493Z\",\n    \"modified\": \"2016-09-09T22:26:11.89455058Z\",\n    \"last-enabled\": \"2016-09-09T20:13:22.577932493Z\"\n}",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Request-Id": "69a8e539-76dc-11e6-8015-000000000000",
+        "X-Kapacitor-Version": "1.0.0-mux",
+        "Date": "Fri, 09 Sep 2016 22:26:11 GMT",
+        "Content-Length": "1244"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

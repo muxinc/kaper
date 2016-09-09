@@ -74,6 +74,14 @@ defmodule KaperTest do
     end
   end
 
+  test "update_task_script returns {:ok, response} if successful" do
+    use_cassette "update_task_script" do
+      {:ok, response} = KapClient.update_task_script "ebbffcb1-6d72-42d1-b8b5-148ce0257ccd",  "stream\n    |from()\n        .measurement('disk')\n"
+
+      assert response[:script] == "stream\n    |from()\n        .measurement('disk')\n"
+    end
+  end
+
   test "enable_task returns {:ok, response} if successful" do
     use_cassette "enable_task" do
       {:ok, response} = KapClient.enable_task "5909b578-d8ee-448f-99b0-c4767e37f96f"

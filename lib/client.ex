@@ -22,6 +22,9 @@ defmodule Kaper.Client do
       def disable_task(id) do
         unquote(__MODULE__).disable_task(conf(), id)
       end
+      def update_task_script(id, script) do
+        unquote(__MODULE__).update_task_script(conf(), id, script)
+      end
     end
   end
 
@@ -74,6 +77,16 @@ defmodule Kaper.Client do
   defp do_update_task_status(conf, id, status) do
     attrs = %{
       "status": status,
+    }
+    req_url = url(Path.join("/kapacitor/v1/tasks/", id), conf[:url])
+
+    body = Poison.encode!(attrs)
+    request conf, :patch, req_url, [], "application/json", body
+  end
+
+  def update_task_script(conf, id, script) do
+    attrs = %{
+      "script": script,
     }
     req_url = url(Path.join("/kapacitor/v1/tasks/", id), conf[:url])
 
@@ -137,7 +150,7 @@ defmodule Kaper.Client do
     |> normalize_response
   end
 
- defp normalize_response(response) do
+  defp normalize_response(response) do
     case response do
       {:ok, %HTTPoison.Response{body: body, status_code: 200}} ->
         {:ok, Poison.decode!(body) |> Enum.map(fn({k, v}) -> {String.to_atom(k), v} end) }
@@ -152,5 +165,4 @@ defmodule Kaper.Client do
 
   defp add_query(url, ""),          do: url
   defp add_query(url, query),       do: url <> "?" <> query
-
 end
